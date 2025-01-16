@@ -36,7 +36,6 @@ class UsuarioService
             return ['error' => 'Error al consultar los usuarios: ' . $e->getMessage()];
         }
     }
-    
     public function registrarUsuario($data): JsonResponse
     {
         try {
@@ -61,7 +60,6 @@ class UsuarioService
             return response()->json(['error' => 'Ha ocurrido un error inesperado: ' . $e->getMessage()], 500);
         }
     }
-
     public function actualizarUsuario($data): JsonResponse
     {
         try {
@@ -110,7 +108,6 @@ class UsuarioService
             return response()->json(['error' => 'Ha ocurrido un error inesperado: ' . $e->getMessage()], 500);
         }
     }
-    
     public function actualizarEstado($data): JsonResponse
     {
         try {
@@ -256,9 +253,11 @@ class UsuarioService
             if (!empty($materia)) {
                 $query->where('m.id_materia',  '=',$materia );
             }
-    
+            
             if (!empty($estado)) {
-                $query->where('et.id_estado_tareas','=', $estado);
+                $query->where('et.id_estado_tareas', '=', $estado);
+            } else {
+                $query->where('et.id_estado_tareas', '<>', 4);
             }
     
             if (!empty($fechaInicio) && !empty($fechaFin)) {
@@ -277,8 +276,4 @@ class UsuarioService
             return ['error' => 'Error al ejecutar el reporte: ' . $e->getMessage()];
         }
     }
-    
-    
-    
-    
 }

@@ -48,9 +48,6 @@ class UsuarioController extends Controller
             ], 500);
         }
     }
-
-
-
     public function registrarUsuario(Request $request): JsonResponse
     {
         try {
@@ -78,8 +75,6 @@ class UsuarioController extends Controller
             ], 500);
         }
     }
-    
-    
     public function actualizarEstado(Request $request): JsonResponse
     {
         try {
@@ -93,9 +88,6 @@ class UsuarioController extends Controller
             ], 500);
         }
     }
-    
-
-
     public function eliminarTarea($id_tarea): JsonResponse
     {
         try {
@@ -108,10 +100,6 @@ class UsuarioController extends Controller
             ], 500);
         }
     }
-    
-    
-
-
     public function obtenermaterias(): JsonResponse
     {
         try {
@@ -124,7 +112,6 @@ class UsuarioController extends Controller
             ], 500);
         }
     }
-    
     public function registrartarea(Request $request): JsonResponse
     {
         try {
@@ -138,8 +125,6 @@ class UsuarioController extends Controller
             ], 500);
         }
     }
-    
-    
     public function reporTarea(Request $request): JsonResponse
     {
         try {
@@ -161,7 +146,6 @@ class UsuarioController extends Controller
             ], 500);
         }
     }
-    
     public function obtenerestado(): JsonResponse
     {
         try {
